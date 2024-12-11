@@ -11,7 +11,7 @@ Now with support for ESR [128](https://github.com/yokoffing/Betterfox/tree/esr12
 
 ## Required reading
 0) Create a [backup profile](https://github.com/yokoffing/Betterfox/wiki/Backup).
-1) Download the user.js file [here](https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js) (Right click > `Save Link As…`).
+1) Download the user.js file [here](https://raw.githubusercontent.com/kd8tbs/my-Betterfox/refs/heads/main/user.js) (Right click > `Save Link As…`).
 2) Review [Common Overrides](https://github.com/yokoffing/Betterfox/wiki/Common-Overrides) and make any necessary changes.
    * See also [Optional Hardening](https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening) for other recommendations.
 3) Open Firefox. In the URL bar, type `about:profiles` and press **Enter**.
