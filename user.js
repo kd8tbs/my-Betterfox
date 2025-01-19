@@ -248,6 +248,7 @@ user_pref("browser.newtabpage.activity-stream.system.showWeather", true);
 
 // PREF: show full URL in bar
 user_pref("browser.urlbar.formatting.enabled", false);
+user_pref("browser.urlbar.trimURLs", false);
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
