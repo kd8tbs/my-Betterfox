@@ -10,7 +10,7 @@ Betterfox is an opinionated preference list inspired by the [law of diminishing 
 
 ## Required reading
 0) Create a [backup profile](https://github.com/yokoffing/Betterfox/wiki/Backup).
-1) Download the user.js file [here](https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js) (Right click > `Save Link As…`).
+1) Download the user.js file [here](https://raw.githubusercontent.com/kd8tbs/my-Betterfox/main/user.js) (Right click > `Save Link As…`).
 2) Review both [Common Overrides](https://github.com/yokoffing/Betterfox/wiki/Common-Overrides) and [Optional Hardening](https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening) to make any necessary changes.
 3) Open Firefox. In the URL bar, type `about:profiles` and press **Enter**.
 4) For the profile you want to use, click **Open Folder** in the **Root Directory** section.
