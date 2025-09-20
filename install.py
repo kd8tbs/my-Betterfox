@@ -51,6 +51,10 @@ INSTALLATIONS_TO_CHECK = [
         "command": [str(Path("C:/Program Files/Mozilla Firefox/firefox"))],
         "root": Path(getenv("APPDATA") or "").joinpath("Mozilla/Firefox").resolve(),
     },
+    {
+        "command": [str(Path(getenv("LOCALAPPDATA") or "").joinpath("Mozilla Firefox/firefox").resolve())],
+        "root": Path(getenv("APPDATA") or "").joinpath("Mozilla/Firefox").resolve(),
+    },
     # linux
     {
         "command": ["firefox"],
@@ -166,6 +170,8 @@ def extract_betterfox(data, profile_folder):
     zipfile = ZipFile(data)
     userjs_zipinfo = None
     for file in zipfile.filelist:
+        if "/zen/" in file.filename and not args.zen:
+            continue
         if file.filename.endswith("user.js"):
             userjs_zipinfo = file
             userjs_zipinfo.filename = Path(userjs_zipinfo.filename).name
@@ -205,6 +211,7 @@ if __name__ == "__main__":
 
     )
     argparser.add_argument("--overrides", "-o", default=default_profile_folder.joinpath("user-overrides.js"), help="if the provided file exists, add overrides to user.js. Defaults to " + str(default_profile_folder.joinpath("user-overrides.js"))),
+    argparser.add_argument("--zen", "-z", action="store_true", default=False, help="Install user.js for the Zen browser instead. Defaults to False"),
     
     
     advanced = argparser.add_argument_group("Advanced")
