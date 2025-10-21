@@ -246,6 +246,22 @@ user_pref("browser.newtabpage.activity-stream.system.showWeather", true);
 
 // PREF: show full URL in bar
 user_pref("browser.urlbar.formatting.enabled", false);
+but you can re-enable them.
+
+// PREF: restore AI features
+user_pref("browser.ml.enable", true);
+
+// PREF: restore AI chat
+user_pref("browser.ml.chat.enabled", true);
+
+// PREF: AI chatbot option in right click menu
+user_pref("browser.ml.chat.menu", true);
+
+// PREF: smart tab groups
+user_pref("browser.tabs.groups.smart.enabled", true);
+
+// PREF: restore link previews
+user_pref("browser.ml.linkPreview.enabled", true);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
@@ -258,3 +274,4 @@ user_pref("browser.urlbar.formatting.enabled", false);
 /****************************************************************************
  * END: BETTERFOX                                                           *
 ****************************************************************************/
+
