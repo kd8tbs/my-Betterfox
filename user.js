@@ -245,8 +245,7 @@ user_pref("browser.newtabpage.activity-stream.showWeather", true);
 user_pref("browser.newtabpage.activity-stream.system.showWeather", true);
 
 // PREF: show full URL in bar
-user_pref("browser.urlbar.formatting.enabled", false);
-but you can re-enable them.
+user_pref("browser.urlbar.formatting.enabled", true);
 
 // PREF: restore AI features
 user_pref("browser.ml.enable", true);
@@ -274,4 +273,5 @@ user_pref("browser.ml.linkPreview.enabled", true);
 /****************************************************************************
  * END: BETTERFOX                                                           *
 ****************************************************************************/
+
 
