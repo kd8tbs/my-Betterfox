@@ -191,7 +191,45 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
+user_pref("permissions.default.geo", 0);
 
+// PREF: allow websites to ask you to receive site notifications
+user_pref("permissions.default.desktop-notification", 0);
+
+// PREF: restore Top Sites on New Tab page
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", true); // Shortcuts
+user_pref("browser.newtabpage.activity-stream.default.sites", ""); // clear default topsites
+
+// PREF: remove sponsored content on New Tab page
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); // Sponsored shortcuts
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // Recommended by Pocket
+user_pref("browser.newtabpage.activity-stream.showSponsored", false); // Sponsored Stories
+
+// PREF: remove default Top Sites (Facebook, Twitter, etc.)
+// [NOTE] This does not block you from adding your own.
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
+
+// PREF: show weather on New Tab page
+user_pref("browser.newtabpage.activity-stream.showWeather", true);
+user_pref("browser.newtabpage.activity-stream.system.showWeather", true);
+
+// PREF: show full URL in bar
+user_pref("browser.urlbar.formatting.enabled", true);
+
+// PREF: restore AI features
+user_pref("browser.ml.enable", true);
+
+// PREF: restore AI chat
+user_pref("browser.ml.chat.enabled", true);
+
+// PREF: AI chatbot option in right click menu
+user_pref("browser.ml.chat.menu", true);
+
+// PREF: smart tab groups
+user_pref("browser.tabs.groups.smart.enabled", true);
+
+// PREF: restore link previews
+user_pref("browser.ml.linkPreview.enabled", true);
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
