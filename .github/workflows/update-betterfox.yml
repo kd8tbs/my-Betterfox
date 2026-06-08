@@ -16,41 +16,24 @@ jobs:
 
       - name: Download latest Betterfox
         run: |
-          curl -L https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js -o latest-user.js
+          curl -L https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js -o user.js
 
-      - name: Preserve custom overrides
+      - name: Append personal overrides
         run: |
-          python << 'PY'
-          from pathlib import Path
-
-          current = Path('user.js').read_text(encoding='utf-8')
-          latest = Path('latest-user.js').read_text(encoding='utf-8')
-
-          start = current.find('START: MY OVERRIDES')
-          end = current.find('END: BETTERFOX')
-
-          if start == -1 or end == -1:
-              raise RuntimeError('Could not locate override block')
-
-          block_start = current.rfind('/****************************************************************************', 0, start)
-          block_end = current.find('****************************************************************************/', end)
-          overrides = current[block_start:block_end + len('****************************************************************************/')]
-
-          new_start = latest.find('START: MY OVERRIDES')
-          new_end = latest.find('END: BETTERFOX')
-
-          replace_start = latest.rfind('/****************************************************************************', 0, new_start)
-          replace_end = latest.find('****************************************************************************/', new_end)
-
-          merged = latest[:replace_start] + overrides + latest[replace_end + len('****************************************************************************/'):]
-
-          Path('user.js').write_text(merged, encoding='utf-8')
-          PY
+          printf '\n\n' >> user.js
+          cat overrides.js >> user.js
 
       - name: Commit changes
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
           git add user.js
-          git diff --staged --quiet || git commit -m 'Update Betterfox to latest upstream'
+
+          if git diff --staged --quiet; then
+            echo 'No changes'
+            exit 0
+          fi
+
+          git commit -m 'Update Betterfox to latest upstream'
           git push
